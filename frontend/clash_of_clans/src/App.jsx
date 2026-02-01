@@ -1,25 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import Clans from "./pages/Clans";
+import Players from "./pages/Players";
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-slate-900">
-        <Routes>
-          {/* Home */}
-          <Route path="/" element={<Hero />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/clans" element={<Clans />} />
+        <Route path="/players" element={<Players/>} />
 
-          {/* Clans Page */}
-          <Route path="/clans" element={<Clans />} />
-
-          {/* Optional: future routes */}
-          {/* <Route path="/players" element={<Players />} /> */}
-          {/* <Route path="/leagues" element={<Leagues />} /> */}
-        </Routes>
-      </div>
-    </Router>
+        {/* placeholders for now */}
+        <Route path="/leagues" element={<div>Leagues Page</div>} />
+        <Route path="/locations" element={<div>Locations Page</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

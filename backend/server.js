@@ -4,6 +4,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const clanRoutes = require('./routes/clans');
+const playerRoutes = require("./routes/players");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +18,8 @@ app.use(morgan('combined'));
 
 // Routes
 app.use('/api/clans', clanRoutes);
+app.use("/api/players", playerRoutes);
+
 
 // Health check
 app.get('/health', (req, res) => res.json({ status: 'OK' }));
