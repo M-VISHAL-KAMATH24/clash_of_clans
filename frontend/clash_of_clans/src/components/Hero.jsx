@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [hoveredButton, setHoveredButton] = useState(null);
@@ -64,7 +65,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto px-4 animate-fade-in"
              style={{ animationDelay: '0.6s' }}>
           {navButtons.map((button, index) => (
-            <a
+            <Link
               key={button.name}
               href={button.path}
               onMouseEnter={() => setHoveredButton(index)}
@@ -121,7 +122,7 @@ const Hero = () => {
               >
                 {button.name}
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
